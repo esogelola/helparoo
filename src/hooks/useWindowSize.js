@@ -5,7 +5,7 @@ const getWindowSize = () => ({
   height: window.innerHeight,
 });
 
-export default function () {
+export default function useWindowSize() {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
   useEffect(() => {
