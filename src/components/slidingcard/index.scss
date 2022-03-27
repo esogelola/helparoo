@@ -1,0 +1,26 @@
+.sliding-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgray;
+  padding: 25px 45px;
+  height: 600px;
+  border-radius: 50px 50px 0px 0px;
+  z-index: 0;
+
+  .drag-bar{
+    width: 150px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: grey;
+  }
+
+  .scroll{
+    overflow-y: scroll;
+
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
+  }
+}
