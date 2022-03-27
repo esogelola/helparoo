@@ -1,0 +1,44 @@
+.landing-1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  height: 100%;
+
+  img{
+    margin: 40px 0px;
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    height: 50%;
+    border-radius: 50px 50px 0px 0px;
+
+    h1{
+      font-size: 35px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      text-align: center;
+      padding: 0px 40px;
+      color: #959595;
+    }
+
+    button{
+      margin-top: 20px;
+      height: 52px;
+      background-color: #ffffff;
+      border: none;
+      width: 70%;
+      border-radius: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #8c8c8c;
+    }
+  }
+}
