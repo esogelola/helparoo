@@ -14,13 +14,13 @@ const Slidingcard = () => {
       <motion.div 
         className='sliding-card'
         drag="y"
-        onLoad={controls.start({y : 575})}
-        dragConstraints={{top: 100, bottom: 600}}
+        onLoad={controls.start({y : -70})}
+        dragConstraints={{top: -550, bottom: 0}}
         onDragEnd={( event, info ) => {
           if( info.velocity.y > 20 || (info.velocity.y >= 0 && info.point.y > 45)) {
-            controls.start({ y: 575, })
+            controls.start({ y: -70, })
           } else {
-            controls.start({  y: 50, })
+            controls.start({  y: -550, })
           }
         }}
         animate={controls}
