@@ -1,11 +1,9 @@
 .sliding-card{
-  position: relative;
-  top: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
-  padding: 25px 45px;
+  padding: 25px 0px;
   height: 1000px;
   border-radius: 50px 50px 0px 0px;
   z-index: 0;
@@ -15,11 +13,56 @@
     height: 15px;
     border-radius: 15px;
     background-color: #E0ACFF;
+    margin-bottom: 20px;
   }
 
   .scroll{
+    max-height: 1000px;
     overflow-y: scroll;
+  }
 
+  .header{
+    color: #BF57FF;
+    font-size: 35px;
+    margin-top: 60px;
+  }
+
+  .line{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.102);
+    width: 100%;
+    height: 0px;
+  }
+
+  .item{
+    display: flex;
+    margin-top: 10px;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.102);
+
+    span{
+      display: block;
+      font-size: 15px;
+    }
+    h2{
+      margin: 5px 0px;
+    }
+
+    button{
+      height: 37px;
+      width: 80px;
+      margin: 7px;
+      background-color: #BF57FF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+    }
+
+    button:active{
+      background-color: #9b44d1;
+      transform: translateY(2px);
+    }
   }
 
   ::-webkit-scrollbar{

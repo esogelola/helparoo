@@ -13,7 +13,6 @@ import Navigation from "./components/Navigation";
 import "mapbox-gl/dist/mapbox-gl.css";
 import AddListingView from "./views/AddListing";
 import Settings from "./views/Settings";
-
 import Signup from "./views/Signup";
 import Login from "./views/Login";
 import Slidingcard from "./components/slidingcard";
