@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.scss";
-import Landing from "../../assets/black-man.png";
+import Landing from "../../../assets/black-man.png";
 
 const Landing3 = ({ onContinue }) => {
   return (

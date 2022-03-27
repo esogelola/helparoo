@@ -1,18 +1,20 @@
-import React from 'react'
-import './index.scss'
+import React from "react";
+import "./index.scss";
 
 const Login = () => {
+  console.log("?");
   return (
-    <div className='login'>    
-
+    <div className="login">
       <button>LOG IN WITH GOOGLE</button>
-      <input type='email' placeholder='Email...'/>
-      <input type='password' placeholder='Password...'/>
-      <p>Don't have an account? <span>Signup Now</span></p>
+      <input type="email" placeholder="Email..." />
+      <input type="password" placeholder="Password..." />
+      <p>
+        Don't have an account? <span>Signup Now</span>
+      </p>
 
-      <button className='main'>Log in</button>
+      <button className="main">Log in</button>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

@@ -5,57 +5,60 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import { connect } from "react-redux";
+
 import Viewport from "./components/Viewport";
 import Map from "./views/Map";
 import Navigation from "./components/Navigation";
 import "mapbox-gl/dist/mapbox-gl.css";
 import AddListingView from "./views/AddListing";
 import Settings from "./views/Settings";
-import Landing1 from "./views/Landing1";
-import Landing2 from "./views/Landing2";
-import Landing3 from "./views/Landing3";
-import Landing4 from "./views/Landing4";
+
 import Signup from "./views/Signup";
 import Login from "./views/Login";
 import Slidingcard from "./components/slidingcard";
 import useAuth from "./hooks/useAuth";
 import Landing from "./views/Landing";
 
+import { firebase } from "./firebase";
+
 const AuthenticatedRoute = ({ component: C, ...props }) => {
-  const { isAuthenticated } = useAuth();
-  if (isAuthenticated) {
-    return <Route {...props} render={(routeProps) => <C {...routeProps} />} />;
-  } else {
-    return <Redirect to={"/login"} />;
-  }
+  const { isAuthenticated } = useAuth(firebase.auth);
+  return (
+    <Route
+      {...props}
+      render={(routeProps) =>
+        isAuthenticated ? <C {...routeProps} /> : <Redirect to="/login" />
+      }
+    />
+  );
 };
 
 const UnauthenticatedRoute = ({ component: C, ...props }) => {
-  const { isAuthenticated } = useAuth();
-
-  if (!isAuthenticated) {
-    return <Route {...props} render={(routeProps) => <C {...routeProps} />} />;
-  } else {
-    return <Redirect to={"/login"} />;
-  }
+  const { isAuthenticated } = useAuth(firebase.auth);
+  return (
+    <Route
+      {...props}
+      render={(routeProps) =>
+        !isAuthenticated ? <C {...routeProps} /> : <Redirect to="/home" />
+      }
+    />
+  );
 };
 
-function App() {
+function App(props) {
+  console.log(props);
   return (
     <div className="App">
       <Viewport>
         <>
           <Router>
             <Switch>
-              <UnauthenticatedRoute exact path="/">
-                <Landing />
-              </UnauthenticatedRoute>
-
               <UnauthenticatedRoute exact path="/signup">
-                <Signup />
+                <Signup {...props} firebase={firebase} />
               </UnauthenticatedRoute>
               <UnauthenticatedRoute exact path="/login">
-                <Login />
+                <Login {...props} />
               </UnauthenticatedRoute>
 
               <AuthenticatedRoute exact path="/settings">
@@ -71,6 +74,9 @@ function App() {
                 <Slidingcard />
                 <Navigation />
               </AuthenticatedRoute>
+              <UnauthenticatedRoute exact path="/">
+                <Landing {...props} />
+              </UnauthenticatedRoute>
             </Switch>
           </Router>
         </>
@@ -79,4 +85,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  user: state.user,
+  map: state.map,
+});
+export default connect(mapStateToProps, null)(App);

@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 
 import mapsReducer from "./map";
-const rootReducer = combineReducers({ mapsReducer });
+import userReducer from "./user";
+const rootReducer = combineReducers({ map: mapsReducer, user: userReducer });
 
 export default rootReducer;

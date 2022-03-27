@@ -7,6 +7,7 @@ import {
   sendPasswordResetEmail,
   onAuthStateChanged,
   getAuth,
+  createUserWithEmailAndPassword,
 } from "@firebase/auth";
 
 import { config } from "./config";
@@ -18,8 +19,12 @@ class Firebase {
   }
 
   async register(name, email, password) {
-    const newUser = await signInWithEmailAndPassword(email, password);
-    return updateProfile({
+    const newUser = await createUserWithEmailAndPassword(
+      this.auth,
+      email,
+      password
+    );
+    return updateProfile(newUser, {
       displayName: name,
     });
   }
