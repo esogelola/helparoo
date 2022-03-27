@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 2rem;
   height: 90%;
+  background-color: white;
   .inputGroup {
     display: flex;
     justify-content: space-between;
@@ -20,7 +21,7 @@
     content: "KM";
     position: relative;
     top: -30px;
-    left: 90%;
+    left: 85%;
     font-family: arial, helvetica, sans-serif;
     font-size: 12px;
     display: block;

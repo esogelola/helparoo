@@ -4,6 +4,7 @@
   padding: 2rem;
   height: 90%;
   overflow-y: auto;
+  background-color: white;
   .formContainer {
     display: flex;
     flex-direction: column;
@@ -70,7 +71,8 @@
       border: none;
       padding: 0.75rem;
       &:active {
-        box-shadow: 0 0.125rem 0.25rem purple;
+        background-color: #9b44d1;
+        transform: translateY(2px);
       }
     }
   }
