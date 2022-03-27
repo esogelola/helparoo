@@ -57,6 +57,11 @@
       border: none;
       border-radius: 10px;
     }
+
+    button:active{
+      background-color: #9b44d1;
+      transform: translateY(2px);
+    }
   }
 
   ::-webkit-scrollbar{
