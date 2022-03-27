@@ -9,6 +9,8 @@ import Viewport from "./components/Viewport";
 import Map from "./views/Map";
 import Navigation from "./components/Navigation";
 import "mapbox-gl/dist/mapbox-gl.css";
+import AddListingView from "./views/AddListing";
+import Settings from "./views/Settings";
 
 const AuthenticatedRoute = ({ component: C, ...props }) => {
   const { isAuthenticated } = { isAuthenticated: false };
@@ -39,10 +41,17 @@ const UnauthenticatedRoute = ({ component: C, ...props }) => {
 function App() {
   return (
     <div className="App">
+      <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_thumbnail_photos/001/880/638/datas/medium.png" />
       <Viewport>
         <>
           <Router>
             <Switch>
+              <Route exact path="/settings">
+                <Settings />
+              </Route>
+              <Route exact path="/add">
+                <AddListingView />
+              </Route>
               <Route path="/">
                 <Map />
               </Route>
