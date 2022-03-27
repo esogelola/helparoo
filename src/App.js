@@ -15,6 +15,8 @@ import Landing1 from "./views/Landing1";
 import Landing2 from "./views/Landing2";
 import Landing3 from "./views/Landing3";
 import Landing4 from "./views/Landing4";
+import Signup from "./views/Signup";
+import Login from "./views/Login";
 
 const AuthenticatedRoute = ({ component: C, ...props }) => {
   const { isAuthenticated } = { isAuthenticated: false };
@@ -61,6 +63,12 @@ function App() {
               </Route>
               <Route exact path="/landing-4">
                 <Landing4 />
+              </Route>
+              <Route exact path="/sign-up">
+                <Signup />
+              </Route>
+              <Route exact path="/log-in">
+                <Login />
               </Route>
               <Route exact path="/settings">
                 <Settings />
