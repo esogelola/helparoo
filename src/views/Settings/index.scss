@@ -31,4 +31,14 @@
   input[type="number"]::-webkit-inner-spin-button {
     opacity: 0;
   }
+  button {
+    margin-top: 4rem;
+    width: 70%;
+    height: 52px;
+    border-radius: 15px;
+    border: 2px solid #bf57ff;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #ffffff;
+  }
 }
