@@ -70,7 +70,7 @@ function MapView() {
       <Map
         viewState={viewState}
         onMove={(evt) => setViewState(evt.viewState)}
-        style={{ width: 800, height: 600, }}
+        style={{ width: 800, height: 600 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
         showUserLocation={false}

@@ -18,73 +18,60 @@ import Landing4 from "./views/Landing4";
 import Signup from "./views/Signup";
 import Login from "./views/Login";
 import Slidingcard from "./components/slidingcard";
+import useAuth from "./hooks/useAuth";
+import Landing from "./views/Landing";
 
 const AuthenticatedRoute = ({ component: C, ...props }) => {
-  const { isAuthenticated } = { isAuthenticated: false };
-  console.log(`AuthenticatedRoute: ${isAuthenticated}`);
-  return (
-    <Route
-      {...props}
-      render={(routeProps) =>
-        isAuthenticated ? <C {...routeProps} /> : <Redirect to="/login" />
-      }
-    />
-  );
+  const { isAuthenticated } = useAuth();
+  if (isAuthenticated) {
+    return <Route {...props} render={(routeProps) => <C {...routeProps} />} />;
+  } else {
+    return <Redirect to={"/login"} />;
+  }
 };
 
 const UnauthenticatedRoute = ({ component: C, ...props }) => {
-  const { isAuthenticated } = { isAuthenticated: false };
-  console.log(`UnauthenticatedRoute: ${isAuthenticated}`);
-  return (
-    <Route
-      {...props}
-      render={(routeProps) =>
-        !isAuthenticated ? <C {...routeProps} /> : <Redirect to="/" />
-      }
-    />
-  );
+  const { isAuthenticated } = useAuth();
+
+  if (!isAuthenticated) {
+    return <Route {...props} render={(routeProps) => <C {...routeProps} />} />;
+  } else {
+    return <Redirect to={"/login"} />;
+  }
 };
 
 function App() {
   return (
     <div className="App">
-      <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_thumbnail_photos/001/880/638/datas/medium.png" />
       <Viewport>
         <>
           <Router>
             <Switch>
-              <Route exact path="/landing-1">
-                <Landing1 />
-              </Route>
-              <Route exact path="/landing-2">
-                <Landing2 />
-              </Route>
-              <Route exact path="/landing-3">
-                <Landing3 />
-              </Route>
-              <Route exact path="/landing-4">
-                <Landing4 />
-              </Route>
-              <Route exact path="/sign-up">
+              <UnauthenticatedRoute exact path="/">
+                <Landing />
+              </UnauthenticatedRoute>
+
+              <UnauthenticatedRoute exact path="/signup">
                 <Signup />
-              </Route>
-              <Route exact path="/log-in">
+              </UnauthenticatedRoute>
+              <UnauthenticatedRoute exact path="/login">
                 <Login />
-              </Route>
-              <Route exact path="/settings">
+              </UnauthenticatedRoute>
+
+              <AuthenticatedRoute exact path="/settings">
                 <Settings />
                 <Navigation />
-              </Route>
-              <Route exact path="/add">
+              </AuthenticatedRoute>
+              <AuthenticatedRoute exact path="/add">
                 <AddListingView />
                 <Navigation />
-              </Route>
-              <Route path="/">
+              </AuthenticatedRoute>
+              <AuthenticatedRoute exact path="/home">
                 <Map />
                 <Slidingcard />
                 <Navigation />
-              </Route>      
-            </Switch>       
+              </AuthenticatedRoute>
+            </Switch>
           </Router>
         </>
       </Viewport>
