@@ -28,11 +28,7 @@ const Landing4 = ({ onContinue }) => {
 
     dispatch({ type: SET_DOB, payload: dob });
 
-    if (!firstName && !lastName && !dob) {
-      setError("Invalid credentials!");
-    } else {
-      history.push("/signup");
-    }
+    history.push("/signup");
   };
   return (
     <div className="landing-4">

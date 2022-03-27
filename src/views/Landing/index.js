@@ -15,11 +15,6 @@ function Landing(props) {
       console.log(currentIndex);
     }
   };
-  useEffect(() => {
-    if (props.user.user) {
-      history.push("/home");
-    }
-  }, [props.user.user]);
 
   if (currentIndex === 0) {
     return <Landing1 onContinue={handleContinue} />;

@@ -19,8 +19,8 @@ function Navigation(props) {
         <img src={AddSquare} alt="add" />
       </button>
       <button
-        className={`map ${location.pathname === "/" && "active"}`}
-        onClick={() => history.push("/")}
+        className={`map ${location.pathname === "/home" && "active"}`}
+        onClick={() => history.push("/home")}
       >
         <img src={World} alt="world" />
       </button>

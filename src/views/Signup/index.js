@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./index.scss";
 
-import { firebase } from "../../firebase";
 import { useHistory } from "react-router-dom";
-const Signup = (props) => {
+const Signup = (props, { firebase }) => {
   const [busy, setBusy] = useState(false);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -30,7 +29,12 @@ const Signup = (props) => {
       <button>SIGN UP WITH GOOGLE</button>
       <input type="email" placeholder="Email..." ref={emailRef} />
       <input type="password" placeholder="Password..." ref={passwordRef} />
-      <p>
+      <p
+        onClick={() => {
+          history.push("/login");
+        }}
+        style={{ cursor: "pointer" }}
+      >
         Already have an account? <span>Login Now</span>
       </p>
 

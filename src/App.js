@@ -53,29 +53,29 @@ function App(props) {
         <>
           <Router>
             <Switch>
-              <UnauthenticatedRoute exact path="/signup">
+              <Route exact path="/">
+                <Landing {...props} />
+              </Route>
+              <Route exact path="/signup">
                 <Signup {...props} firebase={firebase} />
-              </UnauthenticatedRoute>
-              <UnauthenticatedRoute exact path="/login">
+              </Route>
+              <Route exact path="/login">
                 <Login {...props} />
-              </UnauthenticatedRoute>
+              </Route>
 
-              <AuthenticatedRoute exact path="/settings">
+              <Route exact path="/settings">
                 <Settings />
                 <Navigation />
-              </AuthenticatedRoute>
-              <AuthenticatedRoute exact path="/add">
+              </Route>
+              <Route exact path="/add">
                 <AddListingView />
                 <Navigation />
-              </AuthenticatedRoute>
-              <AuthenticatedRoute exact path="/home">
+              </Route>
+              <Route exact path="/home">
                 <Map />
                 <Slidingcard />
                 <Navigation />
-              </AuthenticatedRoute>
-              <UnauthenticatedRoute exact path="/">
-                <Landing {...props} />
-              </UnauthenticatedRoute>
+              </Route>
             </Switch>
           </Router>
         </>
