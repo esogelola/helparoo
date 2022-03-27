@@ -27,6 +27,51 @@ const Slidingcard = () => {
       >
         <div className='drag-bar'></div>
 
+        <div className='scroll'>
+          <h1 className='header'>Listing</h1>
+          <div className='line'></div>
+          <section className='item'>
+						<div>
+          		<h2>need help with a move</h2>
+							<span>123 Rainbow Road</span>
+							<span>12:30PM - 2:30PM </span>
+						</div>
+						<button>Help Out</button>
+          </section>
+          <section className='item'>
+						<div>
+          		<h2>need help with a move</h2>
+							<span>123 Rainbow Road</span>
+							<span>12:30PM - 2:30PM </span>
+						</div>
+						<button>Help Out</button>
+          </section>
+          <section className='item'>
+						<div>
+          		<h2>need help with a move</h2>
+							<span>123 Rainbow Road</span>
+							<span>12:30PM - 2:30PM </span>
+						</div>
+						<button>Help Out</button>
+          </section>
+          <section className='item'>
+						<div>
+          		<h2>need help with a move</h2>
+							<span>123 Rainbow Road</span>
+							<span>12:30PM - 2:30PM </span>
+						</div>
+						<button>Help Out</button>
+          </section>
+          <section className='item'>
+						<div>
+          		<h2>need help with a move</h2>
+							<span>123 Rainbow Road</span>
+							<span>12:30PM - 2:30PM </span>
+						</div>
+						<button>Help Out</button>
+          </section>
+        </div>
+
       </motion.div>
   );
 }

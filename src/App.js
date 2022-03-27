@@ -11,10 +11,6 @@ import Navigation from "./components/Navigation";
 import "mapbox-gl/dist/mapbox-gl.css";
 import AddListingView from "./views/AddListing";
 import Settings from "./views/Settings";
-import Landing1 from "./views/Landing1";
-import Landing2 from "./views/Landing2";
-import Landing3 from "./views/Landing3";
-import Landing4 from "./views/Landing4";
 import Signup from "./views/Signup";
 import Login from "./views/Login";
 import Slidingcard from "./components/slidingcard";
@@ -47,10 +43,10 @@ function App() {
         <>
           <Router>
             <Switch>
+              
               <UnauthenticatedRoute exact path="/">
                 <Landing />
               </UnauthenticatedRoute>
-
               <UnauthenticatedRoute exact path="/signup">
                 <Signup />
               </UnauthenticatedRoute>

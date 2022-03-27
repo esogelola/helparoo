@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Landing1 from "../Landing1";
-import Landing2 from "../Landing2";
-import Landing3 from "../Landing3";
-import Landing4 from "../Landing4";
+import Landing1 from "../../components/Landing/Landing1";
+import Landing2 from "../../components/Landing/Landing2";
+import Landing3 from "../../components/Landing/Landing3";
+import Landing4 from "../../components/Landing/Landing4";
 
 function Landing() {
   const [currentIndex, setCurrentIndex] = useState(0);
