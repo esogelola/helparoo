@@ -12,6 +12,9 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import AddListingView from "./views/AddListing";
 import Settings from "./views/Settings";
 import Landing1 from "./views/Landing1";
+import Landing2 from "./views/Landing2";
+import Landing3 from "./views/Landing3";
+import Landing4 from "./views/Landing4";
 
 const AuthenticatedRoute = ({ component: C, ...props }) => {
   const { isAuthenticated } = { isAuthenticated: false };
@@ -51,28 +54,27 @@ function App() {
                 <Landing1 />
               </Route>
               <Route exact path="/landing-2">
-                <Landing1 />
+                <Landing2 />
               </Route>
               <Route exact path="/landing-3">
-                <Landing1 />
+                <Landing3 />
               </Route>
               <Route exact path="/landing-4">
-                <Landing1 />
+                <Landing4 />
               </Route>
-            </Switch>
-            <Switch>
               <Route exact path="/settings">
                 <Settings />
+                <Navigation />
               </Route>
               <Route exact path="/add">
                 <AddListingView />
+                <Navigation />
               </Route>
               <Route path="/">
                 <Map />
-              </Route>
-            </Switch>
-            <Navigation />
-            
+                <Navigation />
+              </Route>      
+            </Switch>       
           </Router>
         </>
       </Viewport>
