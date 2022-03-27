@@ -16,7 +16,7 @@ function AddListingView() {
         </div>
         <div className="inputGroup">
           <label>Date</label>
-          <input />
+          <input type="date" />
         </div>
         <div className="inputGroupSplit">
           <p>Time</p>

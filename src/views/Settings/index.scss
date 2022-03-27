@@ -3,4 +3,31 @@
   flex-direction: column;
   padding: 2rem;
   height: 90%;
+  .inputGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  input {
+    background-color: #eeee;
+    border-radius: 15px;
+    border: none;
+    padding: 1rem;
+    width: 5rem;
+  }
+  label::after {
+    content: "KM";
+    position: relative;
+    top: -30px;
+    left: 90%;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+  }
+  input[type="number"]::-webkit-inner-spin-button {
+    opacity: 0;
+  }
 }
